@@ -419,7 +419,6 @@ aside {
 .biography__card:hover {
   transform: scale(1.1);
   box-shadow: 0 0 2rem 0.5rem rgba(0, 0, 0, 0.1);
-  width: 800px;
   background-color: var(--color-bg2);
 }
 
@@ -441,14 +440,6 @@ aside {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.contact {
-  /* margin: 20px 10px; */
-}
-
-.social-media {
-  /* padding: 0 5px; */
 }
 
 @media screen and (max-width: 600px) {
@@ -497,16 +488,14 @@ aside {
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
-  width: 100%;
-}
-
-svg {
-  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
   .footer__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 }
 
