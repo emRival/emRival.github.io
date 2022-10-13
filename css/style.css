@@ -497,6 +497,11 @@ aside {
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+svg {
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
