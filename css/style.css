@@ -10,10 +10,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
-  --color-primary: #0d28a6;
+  --color-primary: #5cb85f;
   --color-lightblue: #cfd4ed;
-  --color-green: #5cb85f;
+  /* --color-green: #5cb85f; */
   --color-bg1: #e5e5e5;
   --color-bg2: #f1f3ff;
 
@@ -49,26 +53,10 @@ h2 {
   line-height: 1.5em;
 }
 
-p {
+/* p {
   margin: 1rem 0;
   line-height: 2rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: var(--color-primary);
-  color: var(--color-bg2);
-  border-radius: 0.8rem;
-  border: 1px solid transparent;
-  transition: var(--transition);
-}
-
-.btn:hover {
-  color: rgb(0, 0, 0);
-  background: transparent;
-  border-color: var(--color-primary);
-}
+} */
 
 img {
   width: 100%;
@@ -76,52 +64,113 @@ img {
   object-fit: cover;
 }
 
-.uil {
-  font-size: 1.3rem;
-}
 /* END GLOBAL STYLE */
 
 /* Nav */
 nav {
   position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 5rem;
   z-index: 10;
-  /* transition: var(--transition); */
-  /* border-radius: 0 0 2rem 2rem; */
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navbar-list {
   background: var(--color-bg2);
-}
-
-.nav__button {
-  display: none;
-}
-
-.nav__container {
-  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 18px 0;
 }
 
-.nav__menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+.navbar-item {
+  margin: 0 20px;
+  /* list-style-type: none; */
 }
 
-.item__menu:hover {
-  color: var(--color-primary);
+.toggle {
+  margin: 0 20px;
+  list-style-type: none;
+  display: none;
 }
 
-.nav__menu a {
+.navbar-link {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  color: black;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+  margin-left: 50px;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.navbar-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  /* margin-right: 50px; */
+  background: var(--color-primary);
+  color: var(--color-bg2);
+  border-radius: 0.8rem;
+  border: 1px solid transparent;
   transition: var(--transition);
 }
 
-.window-scroll {
-  background: var(--color-lightblue);
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+.navbar-button:hover {
+  color: black;
+  background: transparent;
+  border-color: var(--color-primary);
+}
+
+@media screen and (max-width: 912px) {
+  .navbar-list {
+    flex-wrap: wrap;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  .navbar-item {
+    display: none;
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .navbar-button {
+    display: block;
+  }
+
+  .active {
+    display: block;
+  }
+  .container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .toggle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .toggle {
+    display: none;
+  }
 }
 
 /* End Nav */
@@ -130,7 +179,6 @@ nav {
 header {
   display: flex;
   align-items: stretch;
-  padding-top: 5rem;
   height: 100vh;
   align-items: center;
   justify-content: center;
@@ -197,8 +245,10 @@ header {
 /* End Header */
 
 /* benefits */
+
 .benefits {
-  margin-top: 2rem;
+  margin-top: 5rem;
+  padding-top: 1rem;
 }
 
 .benefits__header {
@@ -220,6 +270,8 @@ header {
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
+  margin: 1rem 0;
+  line-height: 2rem;
 }
 
 .benefits__judul {
@@ -231,21 +283,29 @@ header {
 .uil {
   background: var(--color-lightblue);
   color: var(--color-primary);
-  padding: 0.2rem;
+  padding: 0.3rem;
   border-radius: 50%;
+  font-size: large;
+  margin-right: 0.7rem;
 }
 
 .benefits__img {
   width: auto;
   height: auto;
   object-fit: cover;
-  border-radius: 50%;
+
   transition: var(--transition);
+}
+
+.benefits__img img {
+  border-radius: 10px;
+  list-style: none;
 }
 
 .benefits__img:hover {
   transform: scale(1.1);
   box-shadow: 0 0 2rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 /* End benefits */
@@ -254,14 +314,13 @@ header {
 
 .whyus {
   margin-top: 6rem;
-  padding-top: 5rem;
   padding-bottom: 6rem;
   background-color: var(--color-bg2);
 }
 
 .whyus__header {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .whyus__list {
@@ -280,6 +339,14 @@ header {
   border-radius: 0.8rem;
   background-color: var(--color-bg2);
   transition: var(--transition);
+  margin: 1rem 0;
+  line-height: 2rem;
+}
+
+.whyus__text p {
+  font-weight: lighter;
+
+  font-style: italic;
 }
 
 .whyus__icon .uil {
@@ -293,71 +360,162 @@ header {
 
 /* end whyus */
 
+/* media screen */
+@media screen and (max-width: 768px) {
+  .benefits__container {
+    grid-template-columns: repeat(1, 2fr);
+  }
+  .benefits__row {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0 1rem;
+  }
+  .whyus__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .benefits__row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .whyus__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.biography__card__header {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.3rem;
+}
+
+aside {
+  background: var(--color-bg1);
+  justify-content: center;
+  padding-bottom: 2rem;
+  /* display: flex; */
+}
+
+.info p {
+  inline-size: 200px;
+  overflow-wrap: break-word;
+  font-size: small;
+  font-style: italic;
+  font-weight: lighter;
+  margin-top: 0.3rem;
+}
+
+.biography__card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 2rem;
+  border-radius: 1rem;
+  transition: var(--transition);
+}
+
+.biography__card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 2rem 0.5rem rgba(0, 0, 0, 0.1);
+  background-color: var(--color-bg2);
+}
+
+.profile-img {
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.biography__card h3 {
+  color: black;
+  font-weight: bold;
+  margin: 0;
+}
+
+.biography__right {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact {
+  /* margin: 20px 10px; */
+}
+
+.social-media {
+  /* padding: 0 5px; */
+}
+
+@media screen and (max-width: 600px) {
+  aside {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  aside {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  aside {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1024) {
+  aside {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    display: flex;
+  }
+}
+
 /* footer */
 .footer {
   display: grid;
-  margin: 2rem 0;
-  gap: 0 1rem;
+  padding: 1rem 0;
+  gap: 1rem;
+  background-color: var(--color-bg2);
+  line-height: 2rem;
 }
 
-.footer p {
-  text-align: left;
-  font-size: 1.6rem;
-  /* margin-top: 2rem; */
-  margin: 0;
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer__container {
   display: grid;
   font-weight: bold;
   /* gap: 2rem; */
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
 }
 
-/* end footer */
-
-/* media screen */
-@media screen and (max-width: 1024px) {
-  .container {
-    width: 95%;
-  }
-
-  .nav__button {
-    font-size: 2rem;
-    cursor: pointer;
-  }
-
-  #open-btn {
-    display: block;
-  }
-
-  #close-btn {
-    display: none;
-  }
-
-  .nav__menu {
-    position: fixed;
-    top: 4.5rem;
-    right: 1rem;
-    width: 18rem;
-    flex-direction: column;
-    gap: 0;
-    background: var(--color-bg2);
-    border-radius: 0.8rem;
-    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
-  }
-
-  .nav__menu li {
-    text-align: center;
-    width: 100%;
-    padding: 1rem 0;
-    border-radius: 0.8rem;
-    transition: var(--transition);
-  }
-
-  .nav__menu li:hover {
-    background: var(--color-green);
+@media screen and (max-width: 768px) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media screen and (max-width: 480px) {
+  .footer__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* end footer */
