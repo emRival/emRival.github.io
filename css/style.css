@@ -419,6 +419,7 @@ aside {
 .biography__card:hover {
   transform: scale(1.1);
   box-shadow: 0 0 2rem 0.5rem rgba(0, 0, 0, 0.1);
+  width: 800px;
   background-color: var(--color-bg2);
 }
 
