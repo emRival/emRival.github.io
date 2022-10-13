@@ -475,7 +475,7 @@ aside {
 /* footer */
 .footer {
   display: grid;
-  padding: 1.3rem 0;
+  padding: 1rem 0;
   gap: 1rem;
   background-color: var(--color-bg2);
   line-height: 2rem;
